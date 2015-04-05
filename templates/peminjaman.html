@@ -6,7 +6,7 @@
 <html class="no-js">
 <!--<![endif]-->
 <head>
-    {% load staticfiles %}
+{% load staticfiles %}
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <title>Portal Aplikasi - Sistem Peminjaman Ruangan Online</title>
@@ -31,10 +31,10 @@
 		<nav id="mainmenu" class="mainmenu">
 		<ul>
 			<li class="logo-wrapper">
-				<a href="index.html"><img src="{% static 'img/Kanan.jpg' %}" width="250" alt="Multipurpose Twitter Bootstrap Template"></a>
+				<a href="/.."><img src="{% static 'img/Kanan.jpg' %}" width="250" alt="Multipurpose Twitter Bootstrap Template"></a>
 			</li>
 			<li class="">
-				<a href="../">Home</a>
+				<a href="/..">Home</a>
 			</li>
 			<li class="active">
 				<a href="#">Peminjaman</a>
@@ -49,17 +49,15 @@
 <!-- Services -->
 <div class="section">
 	<div class="container">
-		<center>
-		<h3>Sistem Peminjaman Ruangan Online Fakultas Ilmu Komputer Universitas Indonesia </h3>
-		</center>
+
 		<div class="row">
 				
 				<div class="col-md-4">
 				<div class="service-wrapper">
 				
-				<button onclick="location.href='create'">Create New</button>
-				<button>Import Jadwal</button>
-				<button>Lihat Alur Peminjaman</button>
+				<input class="btn" type=button onClick="parent.location='ruangan'" value='Create New'>
+				<input class="btn" type=button onClick="parent.location='#'" value='Import Jadwal'>
+				<input class="btn" type=button onClick="parent.location='#'" value='Lihat Alur Peminjaman'>
 				<select>
 				<option>Sort By Kategori</option>
 				<option>Mahasiswa</option>
