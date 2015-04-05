@@ -9,3 +9,8 @@ def index(request):
 def history(request):
     return render(request, 'history.html', '')
 
+def ruangan(request):
+    return render(request, 'createnew.html', '')
+
+def create(request):
+    return render(request, 'formpeminjaman.html', '')
