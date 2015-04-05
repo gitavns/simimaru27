@@ -17,7 +17,7 @@
 .section .container:first-child h2,
 .section .container:first-child h3 {
   margin-top: 0;
-  font-weight: 700;
+  /* font-weight: 700; */
 }
 .input-micro {
   width: 50px;
@@ -80,9 +80,9 @@ h2 {
   color: #53555c;
   font-family: 'Open Sans', sans-serif;
   font-size: 2em;
-  border-bottom: 2px solid #53555c;
+  /* border-bottom: 2px solid #53555c; */
   line-height: 1.5em;
-  margin: 30px 0;
+  /* margin: 30px 0; */
   padding-left: 10px;
 }
 h3 {
@@ -101,12 +101,26 @@ a {
 a:hover {
   color: #2f556d;
 }
-
+.service-wrapper1{
+  background: #FFF;
+  margin: 5px 10px;
+  padding: 10px 20px 20px;
+  -webkit-border-radius: 10px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 10px;
+  -moz-background-clip: padding;
+  border-radius: 15px;
+  background-clip: padding-box;
+  -webkit-box-shadow: 0 0 3px #999;
+  -moz-box-shadow: 0 0 3px #999;
+  box-shadow: 0 0 3px #999;
+  color: 0 0 3px #999;
+}
 .service-wrapper {
   background: #FFF;
   margin: 5px 10px;
   text-align: center;
-  padding: 30px 30px 40px;
+  padding: 10px 20px 20px;
   -webkit-border-radius: 10px;
   -webkit-background-clip: padding-box;
   -moz-border-radius: 10px;
@@ -688,7 +702,7 @@ a:hover {
   .mainmenu-submenu h4 {
     padding-left: 10px;
   }
-  
+
 }
 @media screen and (max-width: 479px) {
   .mainmenu {
@@ -802,8 +816,8 @@ a:hover {
   white-space: nowrap;
 }
 .btn:hover {
-  background: none repeat scroll 0 0 #3b3c41;
-  color: #FFF;
+  background: none repeat scroll 0 0 #EFA0A0;
+  color: #00000;
   text-decoration: none;
   border: 1px solid #3b3c41;
 }
@@ -1060,7 +1074,7 @@ table {
 
 td,th {
     padding: 0;
-	
+
 }
 
 @media print {
@@ -1133,13 +1147,9 @@ td,th {
         border: 1px solid #000;
     }
 
-    .table {
-        border-collapse: collapse!important;
-    }
 
-    .table-bordered th,.table-bordered td {
-        border: 1px solid #ddd!important;
-    };
+
+
 }
 
 * {
@@ -1243,9 +1253,9 @@ hr {
 }
 
 h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
-    font-family: inherit;
+    /* font-family: inherit; */
     font-weight: 500;
-    line-height: 1.1;
+    /* line-height: 1.1; */
     color: inherit;
 }
 
@@ -1543,13 +1553,18 @@ pre code {
     .col-md-4 {
         width: 100%;
     }
-  
+	.col-dm-4 {
+		margin-left:auto;
+        width: 80%;
+		margin-right:auto;
+    }
+
 
  }
 
 body{font-family:'Candara','Calibri',sans-serif;} /*daripada liat font times new roman~ :3 */
- 
-table{box-shadow:0px 0px 5px #aaa;} /*sedikit bayangan yang soft*/
+
+
 table th{
     padding:10px;
     font-weight:bold;
@@ -1558,7 +1573,7 @@ table th{
     text-transform:uppercase;
 }
 table td{
-    padding:10px 5px;
+    padding: 5px 5px;
 }
 
 @media (min-width:700px){
@@ -1572,7 +1587,7 @@ table td{
         text-transform:uppercase;
     }
     table td{
-        padding:10px 5px;
+        padding: 5px 5px;
     }
 }
  @media (max-width:700px){
@@ -1580,8 +1595,8 @@ table td{
         display:block;
         position:relative;
     }
- 
- 
+
+
 }
 @media (max-width:700px){
     table,tbody,tr,td{
@@ -1611,7 +1626,7 @@ table td{
         position:absolute;
         text-indent:0px;
         width:80px; /*disesuaikan dengan kebutuhan*/
- 
+
         /*desainnya bisa disamakan seperti tag TH*/
         background:#33b4e4;
         color:#fff;
@@ -1651,7 +1666,7 @@ table td{
 }
 @media (max-width:700px){
 /*UNTUK DEVICE YANG LEBARNYA KURANG DARI 700PX*/
- 
+
 }
 @media (max-width:767px) {
     .table-responsive {
@@ -1805,9 +1820,6 @@ input[type=search] {
     -webkit-appearance: none;
 }
 
-input[type=date] {
-    line-height: 34px;
-}
 
 .form-group {
     margin-bottom: 15px;
@@ -2249,7 +2261,7 @@ margin-left:30%;
 	background: linear-gradient(to bottom,  rgba(78, 80, 82, 1) 0%,rgba(89,106,114,1) 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedce7', endColorstr='#596a72',GradientType=0 ); /* IE6-9 */
 	color:white;
-	
+
 }
 .btn-warning .badge {
     color: #f0ad4e;
