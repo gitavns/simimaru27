@@ -51,12 +51,12 @@
 	<div class="container">
 
 		<div class="row">
-				
+
 				<div class="col-md-4">
 				<div class="service-wrapper">
-				
+
 				<button class="btn">Download Archieve</button>
-					
+
 				Sort By
 				<select>
 				<option>Date</option>
@@ -72,9 +72,9 @@
 				</select>
 				<br/>
 				<br/>
-					
+
 					<table cellspacing="0" align="center">
-    
+
 	<tr>
         <th>ID</th>
         <th>Tanggal</th>
@@ -86,40 +86,30 @@
 		<th>Jumlah Barang</th>
 		<th>Status</th>
 		<th>Approval</th>
-		
+
     </tr>
+    {% for x in peminjaman %}
     <tr>
-        <td >6767</td>
-        <td >12-10-2001</td>
-        <td >14.00-16.00</td>
-        <td >Zahrul Addini</td>
+        <td >1.</td>
+        <td >{{ x.tanggal }}</td>
+        <td >{{ x.waktu_mulai|H:m }} - {{ x.waktu_selesai }}</td>
+        <td >{{ x.peminjam_username.nama }}</td>
         <td >Mahasiswa</td>
-		<td >2304</td>
-        <td >Rapat BEM</td>
-        <td >4</td>
+		<td >{{ x.ruangan_id.lantai }}.{{ x.ruangan_id.nomor }}</td>
+        <td >{{ x.nama_kegiatan }}</td>
+        <td >{{ x.jumlah_peserta }}</td>
         <td >Manajer Kemahasiswaan</td>
-        <td >Yes or No</td>
-		
+        <td >{{ x.approval_pengawas }}</td>
+
     </tr>
-      <tr>
-        <td >6767</td>
-        <td >12-10-2001</td>
-        <td >14.00-16.00</td>
-        <td >Muhammad Zahrul Addini</td>
-        <td >Mahasiswa</td>
-		<td >2304</td>
-        <td >Rapat BEM</td>
-        <td >4</td>
-        <td >Manajer Kemahasiswaan</td>
-        <td >Yes or No</td>
-		
-    </tr>
-    
+    {% endfor %}
+
+
 </table>
-					
+
 				</div>
 			</div>
-			
+
 		</div>
 	</div>
 </div>
