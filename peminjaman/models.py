@@ -40,7 +40,7 @@ class Peminjaman(models.Model):
 
 class Komentar(models.Model):
     peminjaman_id = models.ForeignKey(Peminjaman)
-    pesan = models.CharField(max_length=140)
+    komen = models.CharField(max_length=140)
     timestamp = models.DateTimeField()
     user_komentar = models.ForeignKey(User)
 
@@ -52,5 +52,5 @@ class Pesan(models.Model):
 
 class Approval(models.Model):
     pengawas_username = models.ForeignKey(Pengawas)
-    izin_id = models.ForeignKey(Peminjaman)
+    peminjaman_id = models.ForeignKey(Peminjaman)
     approval = models.BooleanField()
