@@ -39,7 +39,7 @@ class Peminjaman(models.Model):
     approval_pengawas = models.ManyToManyField(Pengawas,through='Approval')
 
 class Komentar(models.Model):
-    izin_id = models.ForeignKey(Peminjaman)
+    peminjaman_id = models.ForeignKey(Peminjaman)
     pesan = models.CharField(max_length=140)
     timestamp = models.DateTimeField()
     user_komentar = models.ForeignKey(User)
