@@ -54,7 +54,8 @@
 		<div class="row">
 			<div class="col-md-4">
 				<div class="service-wrapper1">
-					<form action="#">
+					<form action="./sukses" method = "POST">
+                         {% csrf_token %}
 						<center>
 						<h3>Formulir Peminjaman</h3>
 						</center>
@@ -63,40 +64,46 @@
 						<tr>
 							<td width="700">
 								<table>
+                                    <input size="30" id="title3" name="tanggal" type="hidden" spellcheck="false" value="2017-05-12">
+                                    <input size="30" id="title3" name="ruangan_id" type="hidden" spellcheck="false" value="1">
+
+                                    <input size="30" id="title3" name="user" type="hidden" spellcheck="false" value="cs-04">
+                                    <input size="30" id="title3" name="jam_awal" type="hidden" spellcheck="false" value="15:00:00">
+                                    <input size="30" id="title3" name="jam_akhir" type="hidden" spellcheck="false" value="17:00:00">
 								<tr>
 									<td width="200">
 										<label class="desc" id="title1" for="Field1">Nama Lengkap</label>
 									</td>
 									<td width="200">
-										<input id="Field1" size="30" name="Field1" type="text" class="field text fn" value="" tabindex="1"></td>
+										<input id="Field1" size="30" name="nama" type="text" class="field text fn" value="" tabindex="1"></td>
 								</tr>
 								<tr>
 									<td width="200">
 										<label class="desc" id="title3" for="Field3">Email</label>
 									</td>
 									<td width="100">
-										<input size="30" id="Field3" name="Field3" type="email" spellcheck="false" value="" maxlength="255" tabindex="3"></td>
+										<input size="30" id="Field3" name="email" type="email" spellcheck="false" value="" maxlength="255" tabindex="3"></td>
 								</tr>
 								<tr>
 									<td width="200">
 										<label class="desc" id="title3" for="Field3">No Telepon</label>
 									</td>
 									<td width="100">
-										<input size="30" id="Field3" name="Field3" type="text" spellcheck="false" value="" maxlength="255" tabindex="3"></td>
+										<input size="30" id="Field3" name="notelp" type="text" spellcheck="false" value="" maxlength="255" tabindex="3"></td>
 								</tr>
 								<tr>
 									<td width="200">
 										<label class="desc" id="title3" for="Field3">Nama Kegiatan</label>
 									</td>
 									<td width="100">
-										<input size="30" id="Field3" name="Field3" type="text" spellcheck="false" value="" maxlength="255" tabindex="3"></td>
+										<input size="30" id="Field3" name="namkeg" type="text" spellcheck="false" value="" maxlength="255" tabindex="3"></td>
 								</tr>
 								<tr>
 									<td width="200">
 										<label class="desc" id="title4" for="Field4">Deskripsi</label>
 									</td>
 									<td width="100">
-										<textarea id="Field4" name="Field4" spellcheck="true" rows="3" cols="40" tabindex="4"></textarea>
+										<textarea id="Field4" name="desk" spellcheck="true" rows="3" cols="40" tabindex="4"></textarea>
 									</td>
 								</tr>
 								<tr>
@@ -104,7 +111,7 @@
 										<label class="desc" id="title4" for="Field4">Jumlah Peserta</label>
 									</td>
 									<td width="100">
-										<input size="30" id="Field3" name="Field3" type="text" spellcheck="false" value="" maxlength="255" tabindex="3"></td>
+										<input size="30" id="Field3" name="jumlah" type="text" spellcheck="false" value="" maxlength="255" tabindex="3"></td>
 								</tr>
                                     <tr>
                                     <td colspan="2">
@@ -116,7 +123,7 @@
 										</p>
 									</fieldset>
 									<input type="checkbox" name="vehicle" value="Car">Setuju<br/><br/>
-									<input class="btn" type="button" value="SUBMIT">
+									<button type="submit" value="Sort">Submit</button>
 								</form>
 							</td>
                                 </tr>
