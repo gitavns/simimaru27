@@ -7,15 +7,15 @@ class Ruangan(models.Model):
     kapasitas = models.IntegerField(default=0)
 
 class User(models.Model):
-    username = models.CharField(max_length=20,primary_key=True)
+    username = models.CharField(max_length=50,primary_key=True)
     pesan = models.ManyToManyField('self', through='Pesan', symmetrical=False)
 
 class Peminjam(User):
-    nama = models.CharField(max_length=30)
+    nama = models.CharField(max_length=50)
 
 class Pengawas(User):
-    nama = models.CharField(max_length=30)
-    role = models.CharField(max_length=20)
+    nama = models.CharField(max_length=50)
+    role = models.CharField(max_length=50)
     nip = models.CharField(max_length=10,default=0)
 
 class Manager_Ruangan(Peminjam):
@@ -40,7 +40,7 @@ class Peminjaman(models.Model):
 
 class Komentar(models.Model):
     peminjaman_id = models.ForeignKey(Peminjaman)
-    komen = models.CharField(max_length=140)
+    komen = models.CharField(max_length=200)
     timestamp = models.DateTimeField()
     user_komentar = models.ForeignKey(User)
 
