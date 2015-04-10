@@ -55,24 +55,15 @@
 				<div class="col-md-4">
 				<div class="service-wrapper">
 
-				<button class="btn">Download Archieve</button>
-
 				Sort By
-				<select>
-				<option>Date</option>
-				<option>1-10</option>
-				<option>11-20</option>
-				<option>21-31</option>
-				</select>
-				<select>
-				<option>Date</option>
-				<option>1-10</option>
-				<option>11-20</option>
-				<option>21-31</option>
-				</select>
-				<br/>
-				<br/>
+				<form action="./history" method="POST">
+                    {% csrf_token %}
+                <input type="date" name="start_date"></input>
+                <input type="date" name="end_date"></input>
+                <button type="submit" value="Sort">Submit</button>
+                </form>
 
+<br>
 					<table cellspacing="0" align="center">
 
 	<tr>
@@ -105,9 +96,10 @@
     {% endfor %}
 
 
-</table>
-
+</table><br>
+<button class="btn">Download Archieve</button>
 				</div>
+
 			</div>
 
 		</div>
