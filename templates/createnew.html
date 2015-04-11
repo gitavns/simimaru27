@@ -16,6 +16,7 @@
 </head>
 <body>
 <!-- Navigation & Logo -->
+{% load set_var %}
 <div class="mainmenu-wrapper">
 	<div class="container">
 		<div class="menuextras">
@@ -68,16 +69,19 @@
 								<td></td>
 							</tr>
 							<tr>
-								<td>
-									<input type="date" name="date"></td>
-								<td>
-									<input type="time" name="date"></td>
-								<td>s/d</td>
-								<td>
-									<input type="time" name="date"></td>
-								<td>
-									<button class="btn">Cari</button>
-								</td>
+                                <form action="./ruangan" method="POST">
+                                {% csrf_token %}
+                                    <td>
+                                        <input type="date" name="date"></td>
+                                    <td>
+                                        <input type="time" name="start_time"></td>
+                                    <td>s/d</td>
+                                    <td>
+                                        <input type="time" name="end_time"></td>
+                                    <td>
+                                        <button class="btn">Cari</button>
+                                    </td>
+                                 </form>
 							</tr>
 							</table>
 						</td>
@@ -113,27 +117,36 @@
 					 Hasil Pencarian : Tanggal - Bulan - Tahun (Jam-Menit)
 					<table cellspacing="0" align="center">
 					<tr>
-						<th>Ruangan</th>
+						<th>Ruangan </th>
 						<th>Kapasitas</th>
-						<th>Status</th>
 						<th>Pinjam</th>
 					</tr>
-					<tr>
-						<td>6767</td>
-						<td>12-10-2001</td>
-						<td>14.00-16.00</td>
-						<td>
-							<button onClick="parent.location='./create'" class="btn">Pinjam</button>
-						</td>
-					</tr>
-					<tr>
-						<td>6767</td>
-						<td>12-10-2001</td>
-						<td>14.00-16.00</td>
-						<td>
-							<button onClick="parent.location='./create'"class="btn">Pinjam</button>
-						</td>
-					</tr>
+                    {% for x in ruangan %}
+                        {% set kondisi = "True" %}
+                        {% for y in peminjaman %}
+                            {% if x.id == y.ruangan_id_id and kondisi == "True" %}
+                                {% set kondisi = "False" %}
+                            {% endif %}
+                            {% if forloop.last and kondisi == "True" %}
+                                <tr>
+                                    <td>{{ x.nomor }}</td>
+                                    <td>{{ x.kapasitas }}</td>
+                                    <td>
+                                        <button onClick="parent.location='./create'" class="btn">Pinjam</button>
+                                    </td>
+                                </tr>
+                            {% endif %}
+                        {% endfor %}
+                        {% if not peminjaman %}
+                            <tr>
+                                <td>{{ x.nomor }}</td>
+                                <td>{{ x.kapasitas }}</td>
+                                <td>
+                                    <button onClick="parent.location='./create'" class="btn">Pinjam</button>
+                                </td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
 					</table>
 				</div>
 			</div>
