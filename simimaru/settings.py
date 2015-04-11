@@ -58,7 +58,6 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
-AUTH_LDAP_SERVER_URI = "https://apps.cs.ui.ac.id/webservice/login_ldap.php?username=user&password=passwd"
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
