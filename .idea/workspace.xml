@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5cdf1d28-7eba-4713-872f-225b56f81be0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/detailpeminjaman.html" afterPath="$PROJECT_DIR$/templates/detailpeminjaman.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simimaru/settings.py" afterPath="$PROJECT_DIR$/simimaru/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/peminjaman/urls.py" afterPath="$PROJECT_DIR$/peminjaman/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simimaru/urls.py" afterPath="$PROJECT_DIR$/simimaru/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/peminjaman/views4.py" afterPath="$PROJECT_DIR$/peminjaman/views4.py" />
+    <list default="true" id="5cdf1d28-7eba-4713-872f-225b56f81be0" name="Default" comment="RETRIEVE KOMENTAR SELESAI, CREATE KOMENTAR SEDIKIT LAGI, SEMANGAT GUYS">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="simimaru.iws" />
@@ -65,8 +59,8 @@
       <file leaf-file-name="views4.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/peminjaman/views4.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.11851852" vertical-offset="259" max-vertical-offset="816">
-              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.3074074" vertical-offset="259" max-vertical-offset="816">
+              <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
               <folding>
                 <element signature="e#22#37#0" expanded="true" />
               </folding>
@@ -428,7 +422,13 @@
       <option name="project" value="LOCAL" />
       <updated>1428724704160</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="RETRIEVE KOMENTAR SELESAI, CREATE KOMENTAR SEDIKIT LAGI, SEMANGAT GUYS">
+      <created>1428755903950</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1428755903950</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -495,7 +495,8 @@
       <TodoPanelSettings />
     </option>
     <MESSAGE value="teslogin get" />
-    <option name="LAST_COMMIT_MESSAGE" value="teslogin get" />
+    <MESSAGE value="RETRIEVE KOMENTAR SELESAI, CREATE KOMENTAR SEDIKIT LAGI, SEMANGAT GUYS" />
+    <option name="LAST_COMMIT_MESSAGE" value="RETRIEVE KOMENTAR SELESAI, CREATE KOMENTAR SEDIKIT LAGI, SEMANGAT GUYS" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -893,8 +894,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/peminjaman/views4.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11851852" vertical-offset="259" max-vertical-offset="816">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.3074074" vertical-offset="259" max-vertical-offset="816">
+          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
           <folding>
             <element signature="e#22#37#0" expanded="true" />
           </folding>
