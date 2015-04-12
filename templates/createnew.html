@@ -117,7 +117,7 @@
 					 Hasil Pencarian : Tanggal - Bulan - Tahun (Jam-Menit)
 					<table cellspacing="0" align="center">
 					<tr>
-						<th>Ruangan </th>
+						<th>Ruangan</th>
 						<th>Kapasitas</th>
 						<th>Pinjam</th>
 					</tr>
@@ -128,6 +128,47 @@
                                 {% set kondisi = "False" %}
                             {% endif %}
                             {% if forloop.last and kondisi == "True" %}
+                                {% for z in peminjaman_partial %}
+                                    {% if x.id == z.ruangan_id_id and kondisi == "True" %}
+                                        {% set kondisi = "False" %}
+                                    {% endif %}
+                                    {% if forloop.last and kondisi == "True" %}
+                                        <tr>
+                                            <td>{{ x.nomor }}</td>
+                                            <td>{{ x.kapasitas }}</td>
+                                            <td>
+                                                <button onClick="parent.location='./create'" class="btn">Pinjam</button>
+                                            </td>
+                                        </tr>
+                                    {% endif %}
+                                {% endfor %}
+                                {% if not peminjaman_partial %}
+                                    <tr>
+                                        <td>{{ x.nomor }}</td>
+                                        <td>{{ x.kapasitas }}</td>
+                                        <td>
+                                            <button onClick="parent.location='./create'" class="btn">Pinjam</button>
+                                        </td>
+                                    </tr>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                        {% if not peminjaman %}
+                            {% for z in peminjaman_partial %}
+                                {% if x.id == z.ruangan_id_id and kondisi == "True" %}
+                                    {% set kondisi = "False" %}
+                                {% endif %}
+                                {% if forloop.last and kondisi == "True" %}
+                                    <tr>
+                                        <td>{{ x.nomor }}</td>
+                                        <td>{{ x.kapasitas }}</td>
+                                        <td>
+                                            <button onClick="parent.location='./create'" class="btn">Pinjam</button>
+                                        </td>
+                                    </tr>
+                                {% endif %}
+                            {% endfor %}
+                            {% if not peminjaman_partial %}
                                 <tr>
                                     <td>{{ x.nomor }}</td>
                                     <td>{{ x.kapasitas }}</td>
@@ -136,15 +177,6 @@
                                     </td>
                                 </tr>
                             {% endif %}
-                        {% endfor %}
-                        {% if not peminjaman %}
-                            <tr>
-                                <td>{{ x.nomor }}</td>
-                                <td>{{ x.kapasitas }}</td>
-                                <td>
-                                    <button onClick="parent.location='./create'" class="btn">Pinjam</button>
-                                </td>
-                            </tr>
                         {% endif %}
                     {% endfor %}
 					</table>

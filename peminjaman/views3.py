@@ -7,7 +7,7 @@ from peminjaman.models import Peminjaman, Ruangan
 # Create your views here.
 
 def index(request):
-    return render(request, 'peminjaman.html', '')
+    return render(request, 'peminjaman.html', "")
 
 
 def history(request):
@@ -26,17 +26,23 @@ def history(request):
 def ruangan(request):
     if request.method == 'POST':
         data = {
-            'peminjaman' : Peminjaman.objects.filter(tanggal=request.POST.get("date"),waktu_mulai=request.POST.get("start_date"),waktu_selesai=request.POST.get("end_time")),
+            'peminjaman' : Peminjaman.objects.filter(tanggal=request.POST.get("date"),waktu_mulai__range=(request.POST.get("start_time"),request.POST.get("end_time")),waktu_selesai__range=(request.POST.get("start_time"),request.POST.get("end_time"))),
+            'peminjaman_partial':Peminjaman.objects.filter(tanggal=request.POST.get("date"),waktu_mulai__range=(request.POST.get("start_time"),request.POST.get("end_time"))) or Peminjaman.objects.filter(tanggal=request.POST.get("date"),waktu_selesai__range=(request.POST.get("start_time"),request.POST.get("end_time"))),
             'ruangan' : Ruangan.objects.all()
         }
     else :
         data = {
-            'peminjaman' : "",
-            'ruangan' : ""
-
+            'peminjaman' : Peminjaman.objects.all(),
+            'ruangan' : Ruangan.objects.all()
         }
     return render(request, 'createnew.html', data)
 
-
 def create(request):
     return render(request, 'formpeminjaman.html', '')
+
+def peminjaman(request):
+    data = {
+        'peminjaman' : Peminjaman.objects.all(),
+        'haha': request.POST.get("username")
+    }
+    return render(request, 'peminjaman.html', data)
