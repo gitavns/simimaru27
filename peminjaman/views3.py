@@ -51,6 +51,5 @@ def create(request):
 def peminjaman(request):
     data = {
         'peminjaman' : Peminjaman.objects.all(),
-        'haha': request.POST.get("username")
     }
     return render(request, 'peminjaman.html', data)

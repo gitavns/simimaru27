@@ -8,7 +8,6 @@ from peminjaman.models import Peminjaman
 def index(request):
     data = {
         'peminjaman' : Peminjaman.objects.all(),
-		'haha': request.POST.get("username")
     }
     return render(request, 'peminjaman.html', data)
 

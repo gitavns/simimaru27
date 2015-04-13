@@ -21,11 +21,13 @@ def importjadwal(request):
 def detail(request):
     if request.method == 'POST':
         data = {
-            'komentar': Komentar.objects.filter(peminjaman_id=(request.POST.get("id")))
+            'komentar': Komentar.objects.filter(peminjaman_id=(request.POST.get("id"))),
+            'peminjaman' : Peminjaman.objects.filter(id=request.POST.get("id_peminjaman"))
         }
     else:
         data = {
-            'komentar': Komentar.objects.all()
+            'komentar': Komentar.objects.all(),
+            'peminjaman' : Peminjaman.objects.filter(id=request.POST.get("id_peminjaman"))
         }
     return render(request, 'detailpeminjaman.html', data)
 

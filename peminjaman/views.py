@@ -3,7 +3,7 @@ from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
 from django.forms import ModelForm
 from peminjaman.models import Peminjaman
-from reportlab.pdfgen import canvas
+#from reportlab.pdfgen import canvas
 
 # Create your views here.
 
