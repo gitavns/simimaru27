@@ -58,8 +58,8 @@
 				Sort By
 				<form action="./history" method="POST">
                     {% csrf_token %}
-                <input type="date" name="start_date"></input>
-                <input type="date" name="end_date"></input>
+                <input type="date" value="{{ mulai }}" name="start_date"></input>
+                <input type="date" value="{{ selesai }}" name="end_date"></input>
                 <button type="submit" value="Sort">Submit</button>
                 </form>
 
@@ -97,7 +97,7 @@
 
 
 </table><br>
-<button class="btn">Download Archieve</button>
+<button class="btn" onclick="parent.location='history/export'">Download Archieve</button>
 				</div>
 
 			</div>
