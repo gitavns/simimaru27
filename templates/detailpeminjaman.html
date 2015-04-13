@@ -67,56 +67,56 @@
 									<td width="200">
 										<label class="desc" id="title1" name='id' value='1' >ID</label>
 									</td>
-									<td width="300">1</td>
+									<td width="300">{{ peminjaman.0.id }}</td>
 								</tr>
 								<tr>
 									<td width="200">
 										<label class="desc" id="title1" >Tanggal</label>
 									</td>
-									<td width="200">2015-04-04</td>
+									<td width="200">{{ peminjaman.0.tanggal }}</td>
 								</tr>
 								<tr>
 									<td width="200">
 										<label class="desc" id="title1" >Penanggung Jawab</label>
 									</td>
-									<td width="200">Zahrul Addini</td>
+									<td width="200">{{ peminjaman.0.peminjam_username.username }}</td>
 								</tr>
 								<tr>
 									<td width="200">
 										<label class="desc" id="title3">Email</label>
 									</td>
-									<td width="100">jantung@ui.ac.id</td>
+									<td width="100">{{ peminjaman.0.email }}</td>
 								</tr>
 								<tr>
 									<td width="200">
 										<label class="desc" id="title3" >No Telepon</label>
 									</td>
-									<td width="100">14045</td>
+									<td width="100">{{ peminjaman.0.no_telp }}</td>
 								</tr>
 								<tr>
 									<td width="200">
 										<label class="desc" id="title3" >Nama Kegiatan</label>
 									</td>
-									<td width="100">Compfest</td>
+									<td width="100">{{ peminjaman.0.nama_kegiatan }}</td>
 								</tr>
 								<tr>
 									<td width="200">
 										<label class="desc" id="title4" >Deskripsi</label>
 									</td>
-									<td width="100">Computer Festival</textarea>
+									<td width="100">{{ peminjaman.0.deskripsi }}</textarea>
 									</td>
 								</tr>
 								<tr>
 									<td width="200">
 										<label class="desc" id="title4" >Jumlah Peserta</label>
 									</td>
-									<td width="100">120</td>
+									<td width="100">{{ peminjaman.0.jumlah_peserta }}</td>
 								</tr>
 								<tr>
 									<td width="200">
 										<label class="desc" id="title4" >Ruangan</label>
 									</td>
-									<td width="100">2304</td>
+									<td width="100">{{ peminjaman.0.ruangan_id.nomor }}</td>
 								</tr>
 								<tr>
 									<td width="200">

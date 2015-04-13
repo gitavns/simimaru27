@@ -101,6 +101,7 @@
         <td >{{ x.approval_pengawas }}</td>
         <td> <form method="POST" action="./update"> {% csrf_token %} <button name = "ambil" type="submit" value='{{ x.id }}'>Update</button></form> </td>
         <td> <form method="POST" action="./delete"> {% csrf_token %} <button name = "ambil" type="submit" value='{{ x.id }}'>Delete</button></form> </td>
+        <td> <form method="POST" action="./detail"> {% csrf_token %} <button name = "id_peminjaman" type="submit" value='{{ x.id }}'>Lihat Detail</button></form> </td>
 
     </tr>
     {% endfor %}
