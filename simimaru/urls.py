@@ -10,5 +10,6 @@ urlpatterns = patterns('',
     url(r'^peminjaman/', include('peminjaman.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^login/', 'peminjaman.views4.login'),
+	url(r'^auth/', 'peminjaman.views4.auth', name='auth'),
 
 )

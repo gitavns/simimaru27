@@ -13,7 +13,10 @@ from peminjaman.models import Peminjaman, Komentar
 # Create your views here.
 
 def login(request):
-    return render(request, 'teslogin.html', '')
+    return render(request, 'login.html', '')
+
+def importjadwal(request):
+    return render(request, 'importjadwal.html', '')
 
 def detail(request):
     if request.method == 'POST':
@@ -26,17 +29,29 @@ def detail(request):
         }
     return render(request, 'detailpeminjaman.html', data)
 
-def suksesdetail(request) :
-    if request.method == 'POST':
-        k = Komentar(id = 3, peminjaman_id= 1, komen=request.POST.get("komentar"), timestamp=request.POST.get(datetime), user_komentar_id=1)
+def alur(request):
+    return render(request, 'alurpeminjaman.html', '')
+
+def baru(request):
+    if request.method == 'POST' :
+        k = Komentar(id = 2, peminjaman_id_id= 1, komen=request.POST.get("komentar"), timestamp= datetime.datetime.now(), user_komentar_id = 'cs-01')
         k.save()
-    return render(request, 'history.html','')
+    data = {
+            'komentar': Komentar.objects.filter(peminjaman_id=(request.POST.get("id")))
+        }
+    return render(request, 'detailpeminjaman.html',data)
+
 def auth(request):
+    print('masuk')
     username = password = ''
-    if request.POST:
+    if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
         param = urllib.urlencode ({"username":username,"password":password})
         myrequest = urllib2.Request('https://apps.cs.ui.ac.id/webservice/login_ldap.php?%s' % (param))
         response = urllib2.urlopen(myrequest, timeout=1000000).read()
-        return render(request, 'index.html', response)
+        arr = json.loads(response)
+        
+        if 'state' in arr:
+            state = arr['state']
+            print('state: ' + str(state))

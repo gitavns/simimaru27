@@ -55,68 +55,37 @@
 		<div class="row">
 			<div class="col-md-4">
 				<div class="service-wrapper">
-					<table>
+					<table cellspacing="0" align="center">
 					<tr>
 						<td>
-							<table>
-							<tr>
-								<td>
-									<label for="meeting">Pilih Tanggal :</label>
-								</td>
-								<td colspan="3">
-									<label for="time">Pilih Jam :</label>
-								</td>
-								<td></td>
-							</tr>
-							<tr>
-                                <form action="./ruangan" method="POST">
-                                {% csrf_token %}
-                                    <td>
-                                        <input type="date" name="date"></td>
-                                    <td>
-                                        <input type="time" name="start_time"></td>
-                                    <td>s/d</td>
-                                    <td>
-                                        <input type="time" name="end_time"></td>
-                                    <td>
-                                        <button class="btn">Cari</button>
-                                    </td>
-                                 </form>
-							</tr>
-							</table>
+							<label for="meeting">Pilih Tanggal :</label>
 						</td>
-						<td>
-							<table>
-							<tr>
-								<th colspan="6">
-									<label for="meeting">Riwayat Peminjaman</label>
-								</th>
-							</tr>
-							<tr>
-								<td width="80">ID</td>
-								<td width="100">Tanggal</td>
-								<td width="150">Penanggung Jawab</td>
-								<td width="100">Keperluan</td>
-								<td width="150">Status</td>
-								<td width="100">Option</td>
-							</tr>
-							<tr>
-								<td colspan="5">Tidak ada Peminjaman</td>
-								<td>Edit | Delete</td>
-							</tr>
-							</table>
+						<td colspan="3">
+							<label for="time">Pilih Jam :</label>
 						</td>
+					</tr>
+					<tr>
+                        <form action="./ruangan" method="POST">
+                        {% csrf_token %}
+						<td><input type="date" name="date" value="{{ date }}"></td>
+                        <td><input type="time" name="start_time" value="{{ mulai }}"></td>
+                        <td>s/d</td>
+                        <td><input type="time" name="end_time" value="{{ selesai }}"></td>
+                        <td><button class="btn">Cari</button></td>
+                        </form>
 					</tr>
 					</table>
 				</div>
 			</div>
 		</div>
+        {% if post%}
 		<div class="row">
 			<div class="col-md-4">
 				<div class="service-wrapper">
 					 Hasil Pencarian : Tanggal - Bulan - Tahun (Jam-Menit)
 					<table cellspacing="0" align="center">
-					<tr>
+
+                    <tr>
 						<th>Ruangan</th>
 						<th>Kapasitas</th>
 						<th>Pinjam</th>
@@ -181,6 +150,7 @@
                     {% endfor %}
 					</table>
 				</div>
+            {% endif %}
 			</div>
 		</div>
 	</div>

@@ -12,7 +12,7 @@
 <title>Portal Aplikasi - Sistem Peminjaman Ruangan Online</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width">
-<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
 </head>
 <body>
 <!-- Navigation & Logo-->
@@ -22,7 +22,7 @@
 		<nav id="mainmenu" class="mainmenu">
 		<ul>
 			<center><li class="logo-wrapper">
-				<a href="index.html"><img src="img/Kanan.jpg" width="250" alt="Multipurpose Twitter Bootstrap Template"></a>
+				<a href=""><img src="{% static 'img/Kanan.jpg' %}" width="250" alt="Multipurpose Twitter Bootstrap Template"></a>
 			</li></center>
 			
 		</ul>
@@ -45,8 +45,23 @@
 				<h2>Sistem Peminjaman Ruangan Online <br/>Fakultas Ilmu Komputer Universitas Indonesia </h2>
 				
 				<br/>
-				<br/>
-				<button class="btn">Login With SSO</button><br/><br/>		<br/>
+				<br/><form method="POST" action="../auth/">
+                    {% csrf_token %}
+                    <center><table><tr>
+                    <td>Username </td>
+                    <td><input type="text" value="" name="username"></td>
+                    </tr>
+                    <tr>
+                    <td>Password </td>
+                    <td><input type="password" value="" name="password"></td>
+                    </tr>
+                    <tr>
+                    <td>
+                    </td>
+                    <td><input type="submit" value="Login With SSO"></td>
+                    </tr></table>
+                    </center></form>
+				<br/><br/>		<br/>
 				<p>
 				Sistem ini hanya untuk internal Fakultas Ilmu Komputer Universitas Indonesia</br>
 				Untuk eksternal Fakultas Ilmu Komputer Universitas Indonesia silahkan hubungi :</br>
@@ -63,7 +78,7 @@
 <div class="menuextras">
 	<div class="extras">
 		<p align="center">
-			<img src="img/foot.png" width="250">
+			<img src="{% static 'img/foot.png' %}" width="250">
 		</p>
 	</div>
 </div>

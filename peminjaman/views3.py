@@ -25,10 +25,18 @@ def history(request):
 
 def ruangan(request):
     if request.method == 'POST':
+        tanggal = request.POST.get("date")
+        mulai = request.POST.get("start_time")
+        selesai = request.POST.get("end_time")
         data = {
-            'peminjaman' : Peminjaman.objects.filter(tanggal=request.POST.get("date"),waktu_mulai__range=(request.POST.get("start_time"),request.POST.get("end_time")),waktu_selesai__range=(request.POST.get("start_time"),request.POST.get("end_time"))),
-            'peminjaman_partial':Peminjaman.objects.filter(tanggal=request.POST.get("date"),waktu_mulai__range=(request.POST.get("start_time"),request.POST.get("end_time"))) or Peminjaman.objects.filter(tanggal=request.POST.get("date"),waktu_selesai__range=(request.POST.get("start_time"),request.POST.get("end_time"))),
-            'ruangan' : Ruangan.objects.all()
+            'peminjaman' : Peminjaman.objects.filter(tanggal=tanggal,waktu_mulai__range=(mulai,selesai),waktu_selesai__range=(mulai,selesai)),
+            'peminjaman_partial':Peminjaman.objects.filter(tanggal=tanggal,waktu_mulai__range=(mulai,selesai)) or Peminjaman.objects.filter(tanggal=tanggal,waktu_selesai__range=(mulai,selesai)),
+            'ruangan' : Ruangan.objects.all(),
+            'post' : True,
+            'date' : tanggal,
+            'mulai' : mulai,
+            'selesai' : selesai
+
         }
     else :
         data = {

@@ -21,7 +21,7 @@
 		<div class="menuextras">
 			<div class="extras">
 				<ul>
-					<li id="username" value="cs-04">Login sebagai Zahrul Addini </li>
+					<li>Login sebagai Zahrul Addini</li>
 					<li>
 						<a href="#">Logout</a>
 					</li>
@@ -37,7 +37,7 @@
 				<a href="/..">Home</a>
 			</li>
 			<li class="active">
-				<a href="#">Peminjaman</a>
+				<a href=".">Peminjaman</a>
 			</li>
 			<li class="has-submenu">
 				<a href="history">History</a>
@@ -49,15 +49,15 @@
 <!-- Services -->
 <div class="section">
 	<div class="container">
-
+    <h5>Peminjaman > Import Jadwal</h5>
 		<div class="row">
-				
+
 				<div class="col-md-4">
 				<div class="service-wrapper">
-				
+
 				<input class="btn" type=button onClick="parent.location='ruangan'" value='Create New'>
 				<input class="btn" type=button onClick="parent.location='import'" value='Import Jadwal'>
-				<input class="btn" type=button onClick="parent.location='alur'" value='Lihat Alur Peminjaman'>
+				<input class="btn" type=button onClick="parent.location=''" value='Lihat Alur Peminjaman'>
 				<select>
 				<option>Sort By Kategori</option>
 				<option>Mahasiswa</option>
@@ -65,51 +65,13 @@
 				</select>
 				<br/>
 				<br/>
-					
-					<table cellspacing="0" align="center">
-    
-	<tr>
-        <th>ID</th>
-        <th>Tanggal</th>
-        <th>Jam</th>
-        <th>Penanggung Jawab</th>
-        <th>Role</th>
-		<th>Ruangan</th>
-		<th>Keperluan</th>
-		<th>Kapasitas</th>
-		<th>Status</th>
-		<th>Approval</th>
-        <th colspan="2">Edit</th>
-    </tr>
-    {% for x in peminjaman %}
-    <tr>
-        <td><a href="detail">{{ x.id }}</a></td>
-        <td ><a href="detail">{{ x.tanggal }}</a></td>
-        <td >{{ x.waktu_mulai }} - {{ x.waktu_selesai }}</td>
-        <td >{{ x.peminjam_username.nama }}</td>
-        <td >Mahasiswa</td>
+                    <br/>
+				<br/>
 
-		<td >{{ x.ruangan_id.lantai }}.{{ x.ruangan_id.nomor }}</td>
-        <td >{{ x.nama_kegiatan }}</td>
-        <td >{{ x.jumlah_peserta }}</td>
-        <td>{% if x.approval_manager_ruangan %}
-            Approved
-        {% else %}
-            Pending
-        {% endif %}
-        </td>
-        <td >{{ x.approval_pengawas }}</td>
-        <td> <form method="POST" action="./update"> {% csrf_token %} <button name = "ambil" type="submit" value='{{ x.id }}'>Update</button></form> </td>
-        <td> <form method="POST" action="./delete"> {% csrf_token %} <button name = "ambil" type="submit" value='{{ x.id }}'>Delete</button></form> </td>
-
-    </tr>
-    {% endfor %}
-</table>
-                    <!--<h1>Create Peminjaman Berhasil!</h1>-->
-					
+                   <img src="{% static 'img/flow.png' %}" >
 				</div>
 			</div>
-			
+
 		</div>
 	</div>
 </div>

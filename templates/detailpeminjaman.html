@@ -6,7 +6,7 @@
 <html class="no-js">
 <!--<![endif]-->
 <head>
-{% load staticfiles %}
+ {% load staticfiles %}
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <title>Portal Aplikasi - Sistem Peminjaman Ruangan Online</title>
@@ -49,8 +49,9 @@
 <!-- Services -->
 <div class="section">
 	<div class="container">
-
 		<h5>Peminjaman > Detail Peminjaman</h5>
+        <form action="./baru" method ="post">
+            <input type="hidden" name="id" value="1">
 		<div class="row">
 			<div class="col-md-4">
 				<div class="service-wrapper1">
@@ -64,62 +65,62 @@
 								<table border="1">
 								<tr>
 									<td width="200">
-										<label class="desc" id="title1" name='id' value='1' for="Field1">ID</label>
+										<label class="desc" id="title1" name='id' value='1' >ID</label>
 									</td>
-									<td width="300">ID</td>
+									<td width="300">1</td>
 								</tr>
 								<tr>
 									<td width="200">
-										<label class="desc" id="title1" for="Field1">Tanggal</label>
+										<label class="desc" id="title1" >Tanggal</label>
 									</td>
-									<td width="200">12-03-1995</td>
+									<td width="200">2015-04-04</td>
 								</tr>
 								<tr>
 									<td width="200">
-										<label class="desc" id="title1" for="Field1">Penanggung Jawab</label>
+										<label class="desc" id="title1" >Penanggung Jawab</label>
 									</td>
 									<td width="200">Zahrul Addini</td>
 								</tr>
 								<tr>
 									<td width="200">
-										<label class="desc" id="title3" for="Field3">Email</label>
+										<label class="desc" id="title3">Email</label>
 									</td>
-									<td width="100">adinzahrul@gmail.com</td>
+									<td width="100">jantung@ui.ac.id</td>
 								</tr>
 								<tr>
 									<td width="200">
-										<label class="desc" id="title3" for="Field3">No Telepon</label>
+										<label class="desc" id="title3" >No Telepon</label>
 									</td>
-									<td width="100">085789940265</td>
+									<td width="100">14045</td>
 								</tr>
 								<tr>
 									<td width="200">
-										<label class="desc" id="title3" for="Field3">Nama Kegiatan</label>
+										<label class="desc" id="title3" >Nama Kegiatan</label>
 									</td>
 									<td width="100">Compfest</td>
 								</tr>
 								<tr>
 									<td width="200">
-										<label class="desc" id="title4" for="Field4">Deskripsi</label>
+										<label class="desc" id="title4" >Deskripsi</label>
 									</td>
-									<td width="100">Deskripsi Kegiatan</textarea>
+									<td width="100">Computer Festival</textarea>
 									</td>
 								</tr>
 								<tr>
 									<td width="200">
-										<label class="desc" id="title4" for="Field4">Jumlah Peserta</label>
+										<label class="desc" id="title4" >Jumlah Peserta</label>
 									</td>
 									<td width="100">120</td>
 								</tr>
 								<tr>
 									<td width="200">
-										<label class="desc" id="title4" for="Field4">Ruangan</label>
+										<label class="desc" id="title4" >Ruangan</label>
 									</td>
 									<td width="100">2304</td>
 								</tr>
 								<tr>
 									<td width="200">
-										<label class="desc" id="title4" for="Field4">Status</label>
+										<label class="desc" id="title4" >Status</label>
 									</td>
 									<td width="100">Manajer Kemahasiswaan</td>
 								</tr>
@@ -129,39 +130,40 @@
 								</tr>
 								</table>
 							</td>
-							<td width="600">
-                                <form method="POST" action="./suksesdetail">
-                                    {% csrf_token %}
-								<textarea id="Field4" name="komentar" spellcheck="true" rows="3" cols="50" tabindex="4">Masukkan Komentar</textarea><br/>
-								<button type="submit" value="Sort">Submit</button></form>
-								<form>
-									<fieldset>
-										<legend>Komentar :</legend>
-										<p>
-                                            {% for x in komentar %}
-                                                <p><b>'{{ x.komen }}'</b> <h6>{{ x.timestamp }}| {{ x.user_komentar_id }}</h6></p>
+                            <td>
+	 {% csrf_token %} <input name="komentar"type="textarea">
+	<button type="submit" value="Sort">Submit</button>
 
-                                            {% endfor %}
-										</p>
-									</fieldset>
-								</form>
-							</td>
+<form>
+	<fieldset>
+		<legend>Komentar :</legend>
+		<p>
+			 {% for x in komentar %}
+			<p>
+				<h6>{{ x.timestamp }}| {{ x.user_komentar_id }}</h6>
+				<b>'{{ x.komen }}'</b>
+			</p>
+			 {% endfor %}
+		</p>
+	</fieldset>
+</form></td>
 						</tr>
 						</table>
 					</form>
 				</div>
 			</div>
 		</div>
+            </form>
 	</div>
-</div>
 </div>
 <!-- End Services -->
 <div class="menuextras">
-<div class="extras">
-	<p align="center">
-		<img src="{% static 'img/foot.png' %}" width="250">
-	</p>
+	<div class="extras">
+		<p align="center">
+			<img src="{% static 'img/foot.png' %}" width="250">
+		</p>
+	</div>
 </div>
-</div>
+
 </body>
 </html>
