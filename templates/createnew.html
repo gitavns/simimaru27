@@ -67,10 +67,10 @@
 					<tr>
                         <form action="./ruangan" method="POST">
                         {% csrf_token %}
-						<td><input type="date" name="date" value="{{ date }}"></td>
-                        <td><input type="time" name="start_time" value="{{ mulai }}"></td>
+						<td><input class="mac" type="date" name="date" value="{{ date }}"></td>
+                        <td><input class="mac" type="time" name="start_time" value="{{ mulai }}"></td>
                         <td>s/d</td>
-                        <td><input type="time" name="end_time" value="{{ selesai }}"></td>
+                        <td><input class="mac" type="time" name="end_time" value="{{ selesai }}"></td>
                         <td><button class="btn">Cari</button></td>
                         </form>
 					</tr>

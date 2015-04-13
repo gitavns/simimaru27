@@ -38,6 +38,7 @@
 			</li>
 			<li class="active">
 				<a href="#">Peminjaman</a>
+
 			</li>
 			<li class="has-submenu">
 				<a href="history">History</a>
@@ -80,6 +81,7 @@
 		<th>Status</th>
 		<th>Approval</th>
         <th colspan="2">Edit</th>
+        <th >Detail</th>
     </tr>
     {% for x in peminjaman %}
     <tr>
@@ -99,9 +101,9 @@
         {% endif %}
         </td>
         <td >{{ x.approval_pengawas }}</td>
-        <td> <form method="POST" action="./update"> {% csrf_token %} <button name = "ambil" type="submit" value='{{ x.id }}'>Update</button></form> </td>
-        <td> <form method="POST" action="./delete"> {% csrf_token %} <button name = "ambil" type="submit" value='{{ x.id }}'>Delete</button></form> </td>
-        <td> <form method="POST" action="./detail"> {% csrf_token %} <button name = "id_peminjaman" type="submit" value='{{ x.id }}'>Lihat Detail</button></form> </td>
+        <td> <form method="POST" action="./update"> {% csrf_token %} <button class="btn-success" name = "ambil" type="submit" value='{{ x.id }}'>Update</button></form> </td>
+        <td> <form method="POST" action="./delete"> {% csrf_token %} <button class="btn-warning" name = "ambil" type="submit" value='{{ x.id }}'>Delete</button></form> </td>
+        <td> <form method="POST" action="./detail"> {% csrf_token %} <button class="btn-primary" name = "id_peminjaman" type="submit" value='{{ x.id }}'>Detail</button></form> </td>
 
     </tr>
     {% endfor %}

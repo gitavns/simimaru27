@@ -58,8 +58,8 @@
 				Sort By
 				<form action="./history" method="POST">
                     {% csrf_token %}
-                <input type="date" value="{{ mulai }}" name="start_date"></input>
-                <input type="date" value="{{ selesai }}" name="end_date"></input>
+                <input class="mac" type="date" value="{{ mulai }}" name="start_date"></input>
+                <input class="mac "type="date" value="{{ selesai }}" name="end_date"></input>
                 <button type="submit" value="Sort">Submit</button>
                 </form>
 
