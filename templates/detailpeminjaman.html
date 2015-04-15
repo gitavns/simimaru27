@@ -50,7 +50,7 @@
 <div class="section">
 	<div class="container">
 		<h5>Peminjaman > Detail Peminjaman</h5>
-        <form action="./baru" method ="post">
+        <form action="./detail" method ="post">
             <input type="hidden" name="id" value="1">
 		<div class="row">
 			<div class="col-md-4">
@@ -131,9 +131,10 @@
 								</table>
 							</td>
                             <td>
-	 {% csrf_token %} <input name="komentar"type="textarea">
-	<button type="submit" value="Sort">Submit</button>
+    {% csrf_token %}
+    <input name="komentar"type="textarea">
 
+	<button type="submit" name="submit" value="{{peminjaman.0.id}}">Submit</button>
 <form>
 	<fieldset>
 		<legend>Komentar :</legend>

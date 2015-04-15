@@ -19,15 +19,19 @@ def importjadwal(request):
     return render(request, 'importjadwal.html', '')
 
 def detail(request):
-    if request.method == 'POST':
-        data = {
-            'komentar': Komentar.objects.filter(peminjaman_id=(request.POST.get("id"))),
-            'peminjaman' : Peminjaman.objects.filter(id=request.POST.get("id_peminjaman"))
-        }
-    else:
-        data = {
-            'komentar': Komentar.objects.all(),
-            'peminjaman' : Peminjaman.objects.filter(id=request.POST.get("id_peminjaman"))
+    if 'submit' in request.POST :
+        id=request.POST.get("submit")
+        Komentar.objects.create(peminjaman_id_id= id, komen=request.POST.get("komentar"), timestamp= datetime.datetime.now(), user_komentar_id = 'cs-05')
+        p = Peminjaman.objects.filter(id=id)
+        print 'masuk if'
+    else :
+        id=request.POST.get("id_peminjaman")
+        p = Peminjaman.objects.filter(id=id)
+        print "masuk else"
+
+    data = {
+            'komentar': Komentar.objects.filter(peminjaman_id=p[0].id),
+            'peminjaman' : p
         }
     return render(request, 'detailpeminjaman.html', data)
 
@@ -36,8 +40,7 @@ def alur(request):
 
 def baru(request):
     if request.method == 'POST' :
-        k = Komentar(id = 2, peminjaman_id_id= 1, komen=request.POST.get("komentar"), timestamp= datetime.datetime.now(), user_komentar_id = 'cs-01')
-        k.save()
+        Komentar.objects.create(peminjaman_id_id= 1, komen=request.POST.get("komentar"), timestamp= datetime.datetime.now(), user_komentar_id = 'cs-05')
     data = {
             'komentar': Komentar.objects.filter(peminjaman_id=(request.POST.get("id")))
         }
